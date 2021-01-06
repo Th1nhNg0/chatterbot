@@ -4,14 +4,13 @@ from chatterbot.conversation import Statement
 bot = ChatBot(
     'Bot Thong Minh',
     storage_adapter='chatterbot.storage.MongoDatabaseAdapter',
-    database_uri='mongodb://admin:DBhMSEL1BU4HAzYs@chatbot-shard-00-00.2jziq.mongodb.net:27017,chatbot-shard-00-01.2jziq.mongodb.net:27017,chatbot-shard-00-02.2jziq.mongodb.net:27017/chatbot2?ssl=true&replicaSet=atlas-jdhzqq-shard-0&authSource=admin&retryWrites=true&w=majority',  preprocessors=[
-        'chatterbot.preprocessors.clean_whitespace',
+    database_uri='duong dan',
     ]
 )
 
 
 def get_feedback():
-    text = input()
+    text=input()
     if 'yes' in text.lower():
         return True
     elif 'no' in text.lower():
@@ -24,8 +23,8 @@ def get_feedback():
 while True:
     try:
         print('Type something to begin...')
-        input_statement = Statement(text=input())
-        response = bot.generate_response(
+        input_statement=Statement(text = input())
+        response=bot.generate_response(
             input_statement
         )
         print('\n Is "{}" a coherent response to "{}"? \n'.format(
